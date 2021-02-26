@@ -6,6 +6,8 @@ dependencies:
   - pip
 
   - flask=1.1.*
+  - flask-sqlalchemy=2.4.*
+  - psycopyg2=2.8.*
 
   # test dependencies
   - black=19.10b0
