@@ -10,20 +10,30 @@ for viewing previous submissions.
 
 ## Development
 
-To run the backend, first create and activate the conda environment:
+### API
+
+To run the api, first create and activate the conda environment:
 
 ```bash
 conda env create -f ci/environment.yml
 conda activate act-matrix-dev
 ```
 
-Then start the flask dev server:
+Then export the required environment variables and start the flask dev server:
 
 ```bash
-export FLASK_APP=backend
+export FLASK_APP=api
 export FLASK_ENV=development
+
+export DB_USER=[USERNAME]
+export DB_HOST=[HOST]
+
 flask run
 ```
+
+Note - this relies on running postgresql locally with a database `act-matrix`.
+
+### UI
 
 To start the frontend, navigate to `/frontend`, install the dependencies, and start the dev server:
 
