@@ -15,11 +15,11 @@ for viewing previous submissions.
 To run the api, first create and activate the conda environment:
 
 ```bash
-conda env create -f ci/environment.yml
+conda env create -f api/environment.yml
 conda activate act-matrix-dev
 ```
 
-Then export the required environment variables and start the flask dev server:
+Export the required environment variables:
 
 ```bash
 export FLASK_APP=api
@@ -27,7 +27,11 @@ export FLASK_ENV=development
 
 export DB_USER=[USERNAME]
 export DB_HOST=[HOST]
+```
 
+And then start the flask dev server from project root:
+
+```
 flask run
 ```
 
