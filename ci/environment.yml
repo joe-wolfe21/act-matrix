@@ -1,0 +1,14 @@
+name: act-matrix-dev
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - pip
+
+  - flask=1.1.*
+
+  # test dependencies
+  - black=19.10b0
+  - flake8
+  - isort>=4.0.0,<5.0.0
+  - pytest
