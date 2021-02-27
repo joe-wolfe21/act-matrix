@@ -2,8 +2,10 @@ import os
 
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_marshmallow import Marshmallow
 
 db = SQLAlchemy()
+ma = Marshmallow()
 
 def create_app(test_config=None):
     """The application factory of the Flask app. Any configuration, registration,
@@ -17,6 +19,7 @@ def create_app(test_config=None):
     app.config.from_object('api.config.Config')
     
     db.init_app(app)
+    ma.init_app(app)
     
     with app.app_context():
 

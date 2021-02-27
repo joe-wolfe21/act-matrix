@@ -1,7 +1,7 @@
-from flask import jsonify
 from flask import request
 from flask import current_app as app
 from .models import db, User
+from .schemas import users_schema
 
 @app.route("/api/header")
 def header():
@@ -16,4 +16,4 @@ def user_records():
     """
     users = User.query.all()
 
-    return jsonify({"count": len(users)})
+    return {"users": users_schema.dump(users)}
