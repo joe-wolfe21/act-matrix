@@ -2,44 +2,69 @@
 
 The ACT Matrix is designed to improve psychological flexibility over time. It
 was created by Kevin Polk, founder of the [ACT Matrix
-Academy](https://www.theactmatrixacademy.com/).
-
-This web application is being created for Tina Long as a proof of concept
-to faciliate a quick and easy process for completing the Act Matrix and
-for viewing previous submissions.
+Academy](https://www.theactmatrixacademy.com/). This is a MVP web application
+for Tina Long that offers a quick and easy way to complete the Act Matrix and
+view past submissions.
 
 ## Development
 
+The following details how to setup and run the services locally.
+
 ### API
 
-To run the api, first create and activate the conda environment:
+Flask is used to serve the api. Follow the instructions below to get setup and
+running:
+
+#### Prereqs
+
+- `postgresql` is installed locally and running.
+- `conda` is installed
+
+#### Setup
+
+Setup a local environment:
 
 ```bash
 conda env create -f api/environment.yml
 conda activate act-matrix-dev
 ```
 
-Export the required environment variables:
+Export required flask environment variables:
 
 ```bash
 export FLASK_APP=api
 export FLASK_ENV=development
+```
 
+Export required db environment variables:
+
+```bash
 export DB_USER=[USERNAME]
 export DB_HOST=[HOST]
 ```
 
-And then start the flask dev server from project root:
+Start the flask dev server from project root:
 
-```
+```bash
 flask run
 ```
 
-Note - this relies on running postgresql locally with a database `act-matrix`.
+#### Seeding
+
+To create and seed a local database, use the `db` cli:
+
+```bash
+flask db drop create seed
+```
 
 ### UI
 
-To start the frontend, navigate to `/frontend`, install the dependencies, and start the dev server:
+The front end is built with `react`.
+
+#### Setup
+
+To start the frontend, navigate to `/frontend`, install the dependencies, and
+start the dev server:
 
 ```bash
 yarn install

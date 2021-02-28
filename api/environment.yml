@@ -7,7 +7,9 @@ dependencies:
 
   - flask=1.1.*
   - flask-sqlalchemy=2.4.*
+  - flask-marshmallow=0.14.*
   - psycopyg2=2.8.*
+  - marshmallow-sqlalchemy=0.24.*
 
   # test dependencies
   - black=19.10b0
