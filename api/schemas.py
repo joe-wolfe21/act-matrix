@@ -1,9 +1,11 @@
-from . import ma
-from .models import User
+from flask_marshmallow import Marshmallow
+from . import  models
+
+ma = Marshmallow()
 
 class UserSchema(ma.SQLAlchemySchema):
     class Meta:
-        model = User
+        model = models.User
 
     id = ma.auto_field()
     first_name = ma.auto_field()
