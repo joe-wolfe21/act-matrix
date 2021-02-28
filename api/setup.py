@@ -1,9 +1,8 @@
-from setuptools import setup, find_packages
-
+from setuptools import find_packages, setup
 
 setup(
-    name='api',
-    version='0.1.0',
+    name="api",
+    version="0.1.0",
     author="Joe Wolfe",
     author_email="joe.wolfe21@gmail.com",
     description="Flask API for the act matrix web application.",
@@ -11,7 +10,5 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     zip_safe=False,
-    install_requires=[
-        'flask',
-    ],
+    install_requires=["flask"],
 )

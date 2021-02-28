@@ -1,7 +1,9 @@
 from flask_marshmallow import Marshmallow
-from . import  models
+
+from . import models
 
 ma = Marshmallow()
+
 
 class UserSchema(ma.SQLAlchemySchema):
     class Meta:
