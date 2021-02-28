@@ -15,6 +15,8 @@ class UserSchema(ma.SQLAlchemySchema):
     username = ma.auto_field()
     email = ma.auto_field()
 
+    matrices = ma.auto_field()
+
 
 user_schema = UserSchema()
 users_schema = UserSchema(many=True)
