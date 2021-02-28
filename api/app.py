@@ -1,6 +1,6 @@
 from flask import Flask
 
-from .models import db_create_cmd, db_drop_cmd, db_seed_cmd
+from .cli import db_cli
 
 
 def create_app():
@@ -24,9 +24,7 @@ def create_app():
     ma.init_app(app)
 
     # add additional cli commands for db setup
-    app.cli.add_command(db_create_cmd)
-    app.cli.add_command(db_drop_cmd)
-    app.cli.add_command(db_seed_cmd)
+    app.cli.add_command(db_cli)
 
     with app.app_context():
         from . import routes  # noqa F401
