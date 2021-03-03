@@ -25,7 +25,7 @@ running:
 Setup a local environment:
 
 ```bash
-conda env create -f api/environment.yml
+conda env create -f backend/environment.yml
 conda activate act-matrix-dev
 ```
 
@@ -43,7 +43,7 @@ export DB_USER=[USERNAME]
 export DB_HOST=[HOST]
 ```
 
-Start the flask dev server from project root:
+Start the flask dev server from `/backend`:
 
 ```bash
 flask run
