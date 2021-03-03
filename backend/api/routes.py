@@ -2,7 +2,7 @@ from flask import current_app as app
 from flask import jsonify
 
 from .models import User
-from .schemas import users_schema
+from .schemas import matrices_schema, user_schema, users_schema
 
 
 @app.route("/api/header")
@@ -20,3 +20,21 @@ def user_records():
     users = User.query.all()
 
     return {"users": users_schema.dump(users)}
+
+
+@app.route("/api/users/<uuid:user_id>", methods=["GET"])
+def user_record(user_id):
+    """Get the user with `user_id`.
+    """
+    user = User.query.get(user_id)
+
+    return {"user": user_schema.dump(user)}
+
+
+@app.route("/api/users/<uuid:user_id>/matrices", methods=["GET"])
+def user_matrix_records(user_id):
+    """Get the matrices for user with `user_id`.
+    """
+    user = User.query.get(user_id)
+
+    return {"matrices": matrices_schema.dump(user.matrices)}

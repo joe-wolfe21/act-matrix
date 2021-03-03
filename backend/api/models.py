@@ -32,8 +32,7 @@ class User(db.Model):
 
 
 class Matrix(db.Model):
-    """Represents a completed Matrix, filled out by
-    a User.
+    """Represents a completed Matrix, associated with a user.
     """
 
     __tablename__ = "matrices"
