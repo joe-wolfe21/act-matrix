@@ -23,7 +23,6 @@ class MatrixSchema(ma.SQLAlchemySchema):
         model = models.Matrix
 
     id = ma.auto_field()
-    user_id = ma.auto_field()
     answer_bottom_right = ma.auto_field()
     answer_bottom_left = ma.auto_field()
     answer_top_left = ma.auto_field()
