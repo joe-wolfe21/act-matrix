@@ -4,7 +4,7 @@ import emptyMatrix from "../images/act-matrix-blank.png";
 const ResultsView = ({ answers }) => (
   <div className="result-view">
     <Alert className="header" severity="success" color="info">
-      Do you think you might have the opportunity to notice these things?
+      Do you think you might have the opportunity to notice these things? test
     </Alert>
     <div className="result">
       <img
