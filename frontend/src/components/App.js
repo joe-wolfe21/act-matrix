@@ -1,8 +1,9 @@
-import { Fragment } from "react";
-import Header from "./Header";
-import ActView from "./ActView";
-
-import "bootstrap/dist/css/bootstrap.min.css";
+import "./ActView"
+import "./Header"
+import "react"
+import ActView
+import Header
+import { Fragment }
 
 const App = () => (
   <Fragment>

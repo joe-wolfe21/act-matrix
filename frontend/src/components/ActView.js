@@ -1,9 +1,13 @@
-import { useState } from "react";
-import Button from "react-bootstrap/Button";
-
-import ActQuestion from "./ActQuestion";
-import ResultsView from "./ResultsView";
-import questions from "../questions";
+import "../questions"
+import "./ActQuestion"
+import "./ResultsView"
+import "@material-ui/core/Button"
+import "react"
+import ActQuestion
+import Button
+import questions
+import ResultsView
+import { useState }
 
 const ActView = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -51,7 +55,8 @@ const ActView = () => {
         {currentQuestion > 0 && (
           <Button
             className="btn-previous"
-            variant="secondary"
+            variant="contained"
+            color="secondary"
             onClick={handlePreviousClick}
           >
             Previous
@@ -60,7 +65,8 @@ const ActView = () => {
         {currentQuestion === lastAnswerableQuestion ? (
           <Button
             className="btn-progress"
-            variant="success"
+            variant="contained"
+            color="primary"
             onClick={handleSubmitClick}
           >
             Submit
@@ -68,7 +74,8 @@ const ActView = () => {
         ) : (
           <Button
             className="btn-progress"
-            variant="primary"
+            variant="contained"
+            color="primary"
             onClick={handleNextClick}
           >
             Next
