@@ -57,7 +57,7 @@ def db_seed_cmd():
     db.session.add(tina)
     db.session.add(cory)
 
-    joe_matrix = Matrix(
+    joe_matrix_one = Matrix(
         user=joe,
         answer_bottom_right="the important things",
         answer_bottom_left="the hard stuff",
@@ -65,7 +65,16 @@ def db_seed_cmd():
         answer_top_right="the things i do to move closer",
     )
 
-    db.session.add(joe_matrix)
+    joe_matrix_two = Matrix(
+        user=joe,
+        answer_bottom_right="the important things again",
+        answer_bottom_left="the hard stuff again",
+        answer_top_left="the things i do to move away again",
+        answer_top_right="the things i do to move closer again",
+    )
+
+    db.session.add(joe_matrix_one)
+    db.session.add(joe_matrix_two)
 
     db.session.commit()
     click.echo("Seeded the database.")
