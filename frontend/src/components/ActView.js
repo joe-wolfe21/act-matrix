@@ -7,7 +7,7 @@ import ResultsView from "./ResultsView";
 import questions from "../questions";
 
 const styles = {
-  helper: {
+  textFieldHelper: {
     color: "blue",
     textAlign: "right",
     margin: "0",
@@ -50,7 +50,6 @@ const ActView = () => {
   return (
     <div className="act-view">
       <ActQuestion questionImg={questionImg} />
-
       <TextField
         className="act-answer"
         id="outlined-multiline-static"
@@ -63,7 +62,7 @@ const ActView = () => {
         onChange={handleUpdateAnswer}
         helperText={answer.length + "/140"}
         inputProps={{ maxLength: 140 }}
-        FormHelperTextProps={{ style: styles.helper }}
+        FormHelperTextProps={{ style: styles.textFieldHelper }}
       />
       <div className="button-group">
         {currentQuestion > 0 && (
