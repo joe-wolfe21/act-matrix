@@ -1,9 +1,18 @@
 import { useState } from "react";
-import Button from "react-bootstrap/Button";
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
 
 import ActQuestion from "./ActQuestion";
 import ResultsView from "./ResultsView";
 import questions from "../questions";
+
+const styles = {
+  textFieldHelper: {
+    color: "blue",
+    textAlign: "right",
+    margin: "0",
+  },
+};
 
 const ActView = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -41,17 +50,26 @@ const ActView = () => {
   return (
     <div className="act-view">
       <ActQuestion questionImg={questionImg} />
-      <textarea
+      <TextField
         className="act-answer"
-        placeholder="starting writing..."
+        id="outlined-multiline-static"
+        label="Answer"
+        multiline
+        rows={4}
+        placeholder="start writing..."
         value={answer}
+        variant="outlined"
         onChange={handleUpdateAnswer}
+        helperText={answer.length + "/140"}
+        inputProps={{ maxLength: 140 }}
+        FormHelperTextProps={{ style: styles.textFieldHelper }}
       />
       <div className="button-group">
         {currentQuestion > 0 && (
           <Button
             className="btn-previous"
-            variant="secondary"
+            variant="contained"
+            color="secondary"
             onClick={handlePreviousClick}
           >
             Previous
@@ -60,7 +78,8 @@ const ActView = () => {
         {currentQuestion === lastAnswerableQuestion ? (
           <Button
             className="btn-progress"
-            variant="success"
+            variant="contained"
+            color="primary"
             onClick={handleSubmitClick}
           >
             Submit
@@ -68,7 +87,8 @@ const ActView = () => {
         ) : (
           <Button
             className="btn-progress"
-            variant="primary"
+            variant="contained"
+            color="primary"
             onClick={handleNextClick}
           >
             Next

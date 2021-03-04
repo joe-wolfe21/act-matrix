@@ -26,9 +26,6 @@ code {
 .act-view .act-answer {
   width: 300px;
   height: 100px;
-  padding: 8px;
-  border: 1px solid #ced4da;
-  border-radius: 0.25rem;
 }
 
 .act-view .act-question {
@@ -45,7 +42,7 @@ code {
 .button-group {
   position: relative;
   width: 300px;
-  margin-top: 12px;
+  margin-top: 36px;
 }
 
 .button-group .btn-progress {
@@ -69,7 +66,7 @@ code {
 .result-view .result {
   position: relative;
   text-align: center;
-  font-size: 6px;
+  font-size: 10px;
   width: 300px;
   margin: 0 auto;
 }
@@ -80,7 +77,7 @@ code {
 
 .result-view .result .bottom-right {
   position: absolute;
-  bottom: 25%;
+  bottom: 10%;
   right: 56%;
   overflow: auto;
   width: 115px;
@@ -89,7 +86,7 @@ code {
 
 .result-view .result .bottom-left {
   position: absolute;
-  bottom: 25%;
+  bottom: 10%;
   left: 53%;
   overflow: auto;
   width: 115px;

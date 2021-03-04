@@ -5,11 +5,10 @@ repos:
       - id: black
         language_version: python3.9
 
-  - repo: https://github.com/timothycrosley/isort
-    rev: cd9c2f6e70196bd429d0179635e0fac2d034ac5e
+  - repo: https://github.com/asottile/reorder_python_imports
+    rev: v2.4.0
     hooks:
-      - id: isort
-        args: ["-rc"]
+      - id: reorder-python-imports
 
   - repo: https://gitlab.com/pycqa/flake8
     rev: 3.7.7

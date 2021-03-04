@@ -2,7 +2,9 @@ from flask import current_app as app
 from flask import jsonify
 
 from .models import User
-from .schemas import matrices_schema, user_schema, users_schema
+from .schemas import matrices_schema
+from .schemas import user_schema
+from .schemas import users_schema
 
 
 @app.route("/api/header")
