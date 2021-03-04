@@ -1,9 +1,9 @@
-import Alert from "react-bootstrap/Alert";
+import Alert from "@material-ui/lab/Alert";
 import emptyMatrix from "../images/act-matrix-blank.png";
 
 const ResultsView = ({ answers }) => (
   <div className="result-view">
-    <Alert className="header" variant="info">
+    <Alert className="header" severity="success" color="info">
       Do you think you might have the opportunity to notice these things?
     </Alert>
     <div className="result">
