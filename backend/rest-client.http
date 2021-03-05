@@ -11,3 +11,15 @@ GET http://localhost:5000/api/users/4b0caca0-eed4-4156-bb57-28200d0eeea8 HTTP/1.
 ###
 
 GET http://localhost:5000/api/users/4b0caca0-eed4-4156-bb57-28200d0eeea8/matrices HTTP/1.1
+
+###
+
+POST http://localhost:5000/api/users/4b0caca0-eed4-4156-bb57-28200d0eeea8/matrices HTTP/1.1
+content-type: application/json
+
+{
+    "answer_bottom_right": "the important things",
+    "answer_bottom_left": "the hard stuff",
+    "answer_top_left": "the things i do to move away",
+    "answer_top_right": "the things i do to move closer"
+}
