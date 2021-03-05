@@ -1,0 +1,13 @@
+GET http://localhost:5000/api/header HTTP/1.1
+
+###
+
+GET http://localhost:5000/api/users HTTP/1.1
+
+###
+
+GET http://localhost:5000/api/users/4b0caca0-eed4-4156-bb57-28200d0eeea8 HTTP/1.1
+
+###
+
+GET http://localhost:5000/api/users/4b0caca0-eed4-4156-bb57-28200d0eeea8/matrices HTTP/1.1
