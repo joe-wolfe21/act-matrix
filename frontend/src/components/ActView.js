@@ -16,7 +16,7 @@ const styles = {
 
 const ActView = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [answers, setAnswers] = useState(["", "", "", "", ""]);
+  const [answers, setAnswers] = useState(["", "", "", ""]);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleUpdateAnswer = (event) => {
@@ -35,7 +35,23 @@ const ActView = () => {
   };
 
   const handleSubmitClick = (event) => {
-    setIsSubmitted(true);
+    const url = "/api/users/4b0caca0-eed4-4156-bb57-28200d0eeea8/matrices";
+    const requestOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        answer_bottom_right: answers[0],
+        answer_bottom_left: answers[1],
+        answer_top_left: answers[2],
+        answer_top_right: answers[3],
+      }),
+    };
+
+    fetch(url, requestOptions)
+      .then(() => setIsSubmitted(true))
+      .catch((err) => console.log("Failed to save matrix.", err));
   };
 
   const questionImg = questions[currentQuestion];
