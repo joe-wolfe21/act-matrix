@@ -1,5 +1,4 @@
 from flask import current_app as app
-from flask import jsonify
 from flask import request
 
 from .models import db
@@ -9,14 +8,6 @@ from .schemas import matrices_schema
 from .schemas import matrix_schema
 from .schemas import user_schema
 from .schemas import users_schema
-
-
-@app.route("/api/header")
-def header():
-    """A temporary route that returns data to render
-    within the header of the frontend.
-    """
-    return jsonify({"header": "Let's Matrix!"})
 
 
 @app.route("/api/users", methods=["GET"])
