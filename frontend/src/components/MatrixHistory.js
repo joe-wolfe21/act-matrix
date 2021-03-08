@@ -1,3 +1,4 @@
+import moment from "moment";
 import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Accordion from "@material-ui/core/Accordion";
@@ -52,7 +53,9 @@ const CompletedMatrix = ({ createdOn }) => {
         aria-controls="panel1a-content"
         id="panel1a-header"
       >
-        <Typography className={classes.heading}>{createdOn}</Typography>
+        <Typography className={classes.heading}>
+          {moment(createdOn).format("MMMM Do YYYY - h:mm a")}
+        </Typography>
       </AccordionSummary>
       <AccordionDetails>
         <Typography>
