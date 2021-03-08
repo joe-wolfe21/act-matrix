@@ -13,7 +13,7 @@ code {
 }
 
 .header {
-  margin: 20px 0 25px 0;
+  margin: 20px 0 25px 0 !important;
   text-align: center;
 }
 
@@ -60,7 +60,7 @@ code {
 .result-view .header {
   font-size: 16px;
   width: 300px;
-  margin: 12px auto;
+  margin: 12px auto !important;
 }
 
 .result-view .result {
@@ -118,4 +118,13 @@ code {
   transform: translate(-50%, -50%);
   width: 50px;
   text-align: left;
+}
+
+.nav-bar a {
+  color: white;
+}
+
+.nav-bar a:hover {
+  color: white;
+  text-decoration: none;
 }
