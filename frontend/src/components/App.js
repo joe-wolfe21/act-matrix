@@ -1,7 +1,4 @@
 import React from "react";
-import { Fragment } from "react";
-import Header from "./Header";
-import ActView from "./ActView";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -9,6 +6,8 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import HistoryIcon from "@material-ui/icons/History";
+import Home from "./Home";
+import MatrixHistory from "./MatrixHistory";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -42,7 +41,7 @@ const App = () => {
         </div>
         <Switch>
           <Route path="/matrices">
-            <Matrices />
+            <MatrixHistory />
           </Route>
           <Route path="/">
             <Home />
@@ -54,16 +53,3 @@ const App = () => {
 };
 
 export default App;
-
-const Home = () => {
-  return (
-    <Fragment>
-      <Header />
-      <ActView />
-    </Fragment>
-  );
-};
-
-const Matrices = () => {
-  return <h2>Matrices</h2>;
-};
