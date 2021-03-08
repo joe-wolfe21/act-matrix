@@ -1,19 +1,10 @@
-import moment from "moment";
 import React, { useState, useEffect } from "react";
+import CompletedMatrixAccordion from "./CompletedMatrixAccordion";
 import { makeStyles } from "@material-ui/core/styles";
-import Accordion from "@material-ui/core/Accordion";
-import AccordionSummary from "@material-ui/core/AccordionSummary";
-import AccordionDetails from "@material-ui/core/AccordionDetails";
-import Typography from "@material-ui/core/Typography";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     width: "100%",
-  },
-  heading: {
-    fontSize: theme.typography.pxToRem(15),
-    fontWeight: theme.typography.fontWeightRegular,
   },
 }));
 
@@ -34,35 +25,16 @@ const MatrixHistory = () => {
   return (
     <div className={classes.root}>
       {completedMatrices.map((completedMatrix) => (
-        <CompletedMatrix
+        <CompletedMatrixAccordion
           key={completedMatrix.id}
           createdOn={completedMatrix.created_on}
+          bottomRight={completedMatrix.answer_bottom_right}
+          bottomLeft={completedMatrix.answer_bottom_left}
+          topLeft={completedMatrix.answer_top_left}
+          topRight={completedMatrix.answer_top_right}
         />
       ))}
     </div>
-  );
-};
-
-const CompletedMatrix = ({ createdOn }) => {
-  const classes = useStyles();
-
-  return (
-    <Accordion>
-      <AccordionSummary
-        expandIcon={<ExpandMoreIcon />}
-        aria-controls="panel1a-content"
-        id="panel1a-header"
-      >
-        <Typography className={classes.heading}>
-          {moment(createdOn).format("MMMM Do YYYY - h:mm a")}
-        </Typography>
-      </AccordionSummary>
-      <AccordionDetails>
-        <Typography>
-          Replace me with an Act Matrix pulled from ResultsView
-        </Typography>
-      </AccordionDetails>
-    </Accordion>
   );
 };
 

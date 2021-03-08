@@ -46,14 +46,14 @@ def user_add_matrix_record(user_id):
     answer_bottom_right = request.json.get("answer_bottom_right", "")
     answer_bottom_left = request.json.get("answer_bottom_left", "")
     answer_top_left = request.json.get("answer_top_left", "")
-    answer_top_left = request.json.get("answer_top_left", "")
+    answer_top_right = request.json.get("answer_top_right", "")
 
     matrix = Matrix(
         user_id=user_id,
         answer_bottom_right=answer_bottom_right,
         answer_bottom_left=answer_bottom_left,
         answer_top_left=answer_top_left,
-        answer_top_right=answer_bottom_right,
+        answer_top_right=answer_top_right,
     )
 
     db.session.add(matrix)
