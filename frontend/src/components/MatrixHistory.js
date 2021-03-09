@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from "react";
 import CompletedMatrixAccordion from "./CompletedMatrixAccordion";
+import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(() => ({
   root: {
-    width: "100%",
+    width: "75%",
+    margin: "0 auto",
+  },
+  header: {
+    margin: "24px 0",
+    fontWeight: "bold",
   },
 }));
 
@@ -20,10 +26,11 @@ const MatrixHistory = () => {
       .then((data) => setCompletedMatrices(data.matrices));
   }, [url]);
 
-  console.log(completedMatrices);
-
   return (
     <div className={classes.root}>
+      <Typography className={classes.header} variant="subtitle1">
+        Your Matrix History
+      </Typography>
       {completedMatrices.map((completedMatrix) => (
         <CompletedMatrixAccordion
           key={completedMatrix.id}
