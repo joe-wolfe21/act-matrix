@@ -21,6 +21,9 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: theme.typography.fontWeightMedium,
     marginTop: theme.spacing(2),
   },
+  details: {
+    justifyContent: "center",
+  },
   icon: {
     paddingBottom: "3px",
   },
@@ -56,15 +59,13 @@ const CompletedMatrixAccordion = ({
           </Typography>
         </div>
       </AccordionSummary>
-      <AccordionDetails>
-        <Typography>
-          <CompletedMatrix
-            bottomRight={bottomRight}
-            bottomLeft={bottomLeft}
-            topLeft={topLeft}
-            topRight={topRight}
-          />
-        </Typography>
+      <AccordionDetails className={classes.details}>
+        <CompletedMatrix
+          bottomRight={bottomRight}
+          bottomLeft={bottomLeft}
+          topLeft={topLeft}
+          topRight={topRight}
+        />
       </AccordionDetails>
     </Accordion>
   );
