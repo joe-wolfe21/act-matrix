@@ -25,7 +25,7 @@ class User(db.Model):
         server_onupdate=db.func.now(),
     )
 
-    matrices = db.relationship("Matrix")
+    matrices = db.relationship("Matrix", order_by="desc(Matrix.created_on)")
 
     def __repr__(self):
         return "<User %r>" % self.username

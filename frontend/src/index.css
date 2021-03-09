@@ -13,7 +13,7 @@ code {
 }
 
 .header {
-  margin: 20px 0 25px 0;
+  margin: 20px 0 25px 0 !important;
   text-align: center;
 }
 
@@ -60,7 +60,7 @@ code {
 .result-view .header {
   font-size: 16px;
   width: 300px;
-  margin: 12px auto;
+  margin: 12px auto !important;
 }
 
 .result-view .result {
@@ -78,7 +78,7 @@ code {
 .result-view .result .bottom-right {
   position: absolute;
   bottom: 10%;
-  right: 56%;
+  left: 56%;
   overflow: auto;
   width: 115px;
   text-align: left;
@@ -87,7 +87,7 @@ code {
 .result-view .result .bottom-left {
   position: absolute;
   bottom: 10%;
-  left: 53%;
+  right: 53%;
   overflow: auto;
   width: 115px;
   text-align: left;
@@ -96,7 +96,7 @@ code {
 .result-view .result .top-right {
   position: absolute;
   top: 5%;
-  right: 56%;
+  left: 56%;
   overflow: auto;
   width: 115px;
   text-align: left;
@@ -105,17 +105,17 @@ code {
 .result-view .result .top-left {
   position: absolute;
   top: 5%;
-  left: 53%;
+  right: 53%;
   overflow: auto;
   width: 115px;
   text-align: left;
 }
 
-.result-view .result .centered {
-  position: absolute;
-  top: 42%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50px;
-  text-align: left;
+.nav-bar a {
+  color: white;
+}
+
+.nav-bar a:hover {
+  color: white;
+  text-decoration: none;
 }
